@@ -624,6 +624,24 @@ bool SARSOP::stopNow(){
 
 		stop = true;
 	}
+        if (this->solverParams->maxAlphas > 0 )
+        {
+		int numAlphas = 0;
+        	FOR (setIdx, beliefCacheSet.size())
+        	{       
+                	numAlphas += (int)lowerBoundSet->set[setIdx]->planes.size();
+                }
+                if (numAlphas >= this->solverParams->maxAlphas)
+		{
+			printDivider();
+                        printf("\nSARSOP finishing ...\n");
+                        printf("  max alphas reached\n");
+                        printf("  Max alphas : %fs\n",  this->solverParams->maxAlphas );
+                        printf("  Actual num alphas : %fs\n", numAlphas);
+                        stop = true;		
+                }
+        }
+
 	if (this->solverParams->timeoutSeconds > 0)
 	{
 		if (elapsed > this->solverParams->timeoutSeconds )
