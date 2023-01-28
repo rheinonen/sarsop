@@ -3,7 +3,7 @@ Efficient Point-Based POMDP Planning by Approximating
 
 Approximate POMDP Planning (APPL) Toolkit
 
-This fork adds a single feature: terminating SARSOP after a desired max number of alpha vectors have been accumulated.
+This fork adds a single feature: terminating SARSOP after a desired max number of alpha vectors have been accumulated. To do this, use the option `--maxAlphas number` when running `pomdpsol`.
 
 APPL is a C++ implementation of the SARSOP algorithm <sup>1</sup>, using the factored MOMDP representation <sup>2</sup>. It takes as input a POMDP model in the POMDP or POMDPX file format and produces a policy file. It also contains a simple simulator for evaluating the quality of the computed policy. 
 
