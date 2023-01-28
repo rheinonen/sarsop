@@ -635,9 +635,9 @@ bool SARSOP::stopNow(){
 		{
 			printDivider();
                         printf("\nSARSOP finishing ...\n");
-                        printf("  max alphas reached\n");
-                        printf("  Max alphas : %fs\n",  this->solverParams->maxAlphas );
-                        printf("  Actual num alphas : %fs\n", numAlphas);
+                        printf("  Preset max alphas reached\n");
+                        printf("  Max alphas : %u\n",  this->solverParams->maxAlphas );
+                        printf("  Actual num alphas : %u\n", numAlphas);
                         stop = true;		
                 }
         }
