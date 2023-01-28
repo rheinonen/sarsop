@@ -101,6 +101,7 @@ namespace momdp{
 		outPolicyFileName = "";
 		interval = -1;
 		timeoutSeconds = -1;
+                maxAlphas=0;
 		delta = 0.1;
 		randomizationBP = false;
 		overPruneThreshold = 50.0;
@@ -149,7 +150,7 @@ namespace momdp{
 		{"output",			1,NULL,'o'}, //  Use ARG as the name of policy output file. The file name is "out.policy" by default.
 		{"policy-interval",		1, NULL, 'i'}, // Use ARG as the time interval between two consecutive write-out of policy files. If this is not specified, ofsol only writes out a policy file upon termination.
 		{"trial-improvement-factor",     1,NULL, 'j'}, // Use ARG as the trial improvement factor. The default is 0.5. So, for example, a trial terminates at a node when its upper and lower bound gap is less than 0.5 of the gap at the root.  
-
+                {"maxAlphas", 1,NULL,'x'},
 		// --------- internal use
 		{"unfactored-init",		0, NULL, 'M' }, // see documentation below
 		{"hardcoded",			1, NULL, 'H' }, // for using hard coded problem instead of loading problem from command line
@@ -315,6 +316,9 @@ namespace momdp{
 			case 'T': // timeout
 				p.timeoutSeconds = atof(optarg);
 				break;
+                        case 'x':
+				p.maxAlphas = atoi(optarg);
+                                break;
 			case 'i':
 				p.interval = atof(optarg);
 				break;

@@ -81,6 +81,7 @@ namespace momdp{
 		bool doConvertPOMDP; // convert POMDPX to POMDP for initialization, take more memory, but may result in faster initialization
 		string outPolicyFileName;
 		double interval;
+                int maxAlphas;
 		double timeoutSeconds;
 		double delta; // Delta pruning parameter
 		double overPruneThreshold;
